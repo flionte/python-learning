@@ -1,21 +1,19 @@
-# 구구단 표 출력하기
+# 입력받은 세 개의 숫자를 오름차순으로 정렬하기
 
-#제목
-print(format("구구단표", ">22s"))
-print("  |  ", end="")
-for i in range(1,10) :
-    val = str(i)
-    if i != 9 :
-        print(format(val, ">4s"), end="")
-    else :
-        print(format(val, ">4s"))
-print("-"*42)
-#상단
+def sorting() :
+    num1 = int(input("숫자를 하나 입력하세요: "))
+    num2 = int(input("숫자를 하나 더 입력하세요: "))
+    num3= int(input("숫자를 하나 더 입력하세요: "))
 
-#출력
-for j in range(1,10) :
-    print(f"{j} |  ", end = "")
-    for i in range(1, 10):
-        val = str(i * j)
-        print(format(val, ">4s"), end="")
-    print("\n")
+    #버블정렬
+    if num1 > num2:
+        num1, num2 = num2, num1
+    if num2 > num3:
+        num2, num3 = num3, num2
+    if num1 > num2:
+        num1, num2 = num2, num1
+
+    print(f"입력한 숫자를 오름차순으로 정렬하면 {num1}, {num2}, {num3}입니다.")
+
+
+sorting()
